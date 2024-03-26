@@ -1,4 +1,4 @@
-package com.secretscribe.Main;
+package com.secretscribe;
 
 import com.secretscribe.Codes.CaesarCipher;
 import com.secretscribe.Codes.MorseCode;

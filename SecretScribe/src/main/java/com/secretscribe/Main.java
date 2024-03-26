@@ -1,4 +1,4 @@
-package com.secretscribe.Main;
+package com.secretscribe;
 
 public class Main {
     UserInterface userInterface = new UserInterface();

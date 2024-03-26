@@ -1,6 +1,9 @@
 package com.secretscribe.Codes;
 
 public class PigLatin {
+    /*
+    Oink Oink
+     */
 
     public static String encodePigLatin(String text) {
         if (text == null || text.isEmpty()) {

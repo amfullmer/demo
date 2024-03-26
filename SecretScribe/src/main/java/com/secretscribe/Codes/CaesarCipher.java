@@ -5,6 +5,9 @@ import java.util.HashMap;
 import static java.lang.Character.toLowerCase;
 
 public class CaesarCipher {
+    /*
+    All hail
+     */
     private static final HashMap<Character, Character> caesarCipherMap = new HashMap<>();
 
     static {
