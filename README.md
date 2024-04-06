@@ -12,16 +12,16 @@ Secret Scribe is a Java command-line program inspired by kid's spy games. It all
 ## Installation
 
 1. **Clone the Repository**:
-git clone https://github.com/amfullmer/secret-scribe.git
+```git clone https://github.com/amfullmer/secret-scribe.git```
 
 2. **Navigate to the Project Directory**:
-cd secret-scribe
+```cd secret-scribe```
 
 3. **Compile the Java Files**:
-javac SecretScribe.java
+```javac SecretScribe.java```
 
 4. **Run the Program**:
-java SecretScribe
+```java SecretScribe```
 
 ## Usage
 
@@ -32,10 +32,3 @@ java SecretScribe
 2. **Decoding**:
 - Choose the decoding method corresponding to the encoding used.
 - Enter the encoded message.
-
-3. **Exit**:
-- Choose to exit the program when done.
-
-## Contributing
-
-Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request.
