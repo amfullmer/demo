@@ -1,10 +1,12 @@
 package com.secretscribe.Codes;
 
+import com.secretscribe.Interfaces.CaeserCipherable;
+
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
-public class CaesarCipher {
+public class CaesarCipher implements CaeserCipherable {
     /*
     All hail
      */
@@ -44,7 +46,7 @@ public class CaesarCipher {
         caesarCipherMap.put(',', ',');
     }
 
-    public static String encodeCaesarCipher(String text) {
+    public String encodeCaesarCipher(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
@@ -76,7 +78,7 @@ public class CaesarCipher {
         return encodedText.trim();
     }
 
-    public static String decodeCaesarCipher(String text) {
+    public String decodeCaesarCipher(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }

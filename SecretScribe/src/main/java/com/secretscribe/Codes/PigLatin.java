@@ -1,11 +1,13 @@
 package com.secretscribe.Codes;
 
-public class PigLatin {
+import com.secretscribe.Interfaces.PigLatinable;
+
+public class PigLatin implements PigLatinable {
     /*
     Oink Oink
      */
-
-    public static String encodePigLatin(String text) {
+    @Override
+    public String encodePigLatin(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
@@ -25,7 +27,8 @@ public class PigLatin {
         return encodeString.toString().trim();
     }
 
-    public static String decodePigLatin(String text) {
+    @Override
+    public String decodePigLatin(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }

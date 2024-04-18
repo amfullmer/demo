@@ -1,10 +1,12 @@
 package com.secretscribe.Codes;
 
+import com.secretscribe.Interfaces.MorseCodeable;
+
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
-public class MorseCode {
+public class MorseCode implements MorseCodeable {
     /*
     The saddest of the codes... get it?
      */
@@ -56,7 +58,8 @@ public class MorseCode {
         morseCodeMap.put(',', ",");
     }
 
-    public static String encodeMorseCode(String text) {
+    @Override
+    public String encodeMorseCode(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
@@ -72,7 +75,8 @@ public class MorseCode {
         return code.trim();
     }
 
-    public static String decodeMorseCode(String text) {
+    @Override
+    public String decodeMorseCode(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
