@@ -1,11 +1,13 @@
 package com.secretscribe.Codes;
 
 import com.secretscribe.Interfaces.MorseCodeable;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
+@Component
 public class MorseCode implements MorseCodeable {
     /*
     The saddest of the codes... get it?

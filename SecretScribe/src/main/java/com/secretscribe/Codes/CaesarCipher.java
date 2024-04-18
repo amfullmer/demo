@@ -1,15 +1,18 @@
 package com.secretscribe.Codes;
 
 import com.secretscribe.Interfaces.CaesarCipherable;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
+@Component
 public class CaesarCipher implements CaesarCipherable {
     /*
     All hail
      */
+
     private static final HashMap<Character, Character> caesarCipherMap = new HashMap<>();
 
     static {

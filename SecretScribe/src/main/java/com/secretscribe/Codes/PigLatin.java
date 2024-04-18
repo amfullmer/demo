@@ -1,11 +1,14 @@
 package com.secretscribe.Codes;
 
 import com.secretscribe.Interfaces.PigLatinable;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PigLatin implements PigLatinable {
     /*
     Oink Oink
      */
+
     @Override
     public String encodePigLatin(String text) {
         if (text == null || text.isEmpty()) {
