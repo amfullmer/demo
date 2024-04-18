@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     Welcome to Secret Scribe
     <br>
     <router-link v-bind:to="{ name: 'secretMessage' }" class="button is-dark">Enter</router-link>
