@@ -1,12 +1,12 @@
 package com.secretscribe.Codes;
 
-import com.secretscribe.Interfaces.CaeserCipherable;
+import com.secretscribe.Interfaces.CaesarCipherable;
 
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
-public class CaesarCipher implements CaeserCipherable {
+public class CaesarCipher implements CaesarCipherable {
     /*
     All hail
      */
