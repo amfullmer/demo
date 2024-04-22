@@ -24,10 +24,10 @@
 
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-dark" @click="encodeMessage">Code</button>
+                <button class="button is-dark" @click="encodeMessage">Encode message</button>
             </div>
             <div class="control">
-                <button class="button is-dark">Decode</button>
+                <button class="button is-dark" @click="decodeMessage">Decode message</button>
             </div>
         </div>
     </div>
@@ -35,6 +35,7 @@
 
 <script>
 import encodeService from '../services/EncodeService.js';
+import decodeService from '../services/DecodeService.js';
 
 export default {
     data() {
@@ -65,6 +66,27 @@ export default {
                     });
             }
         },
+
+        decodeMessage() {
+            if (this.codeType === 'caesar') {
+                decodeService.decodeCaesarCipher(this.userText)
+                    .then(response => {
+                        this.message = response.data;
+                    })
+                    .catch(error => {
+                        console.error("Error encoding message:", error);
+                    });
+            } else if (this.codeType === 'morse') {
+                decodeService.decodeMorseCode(this.userText)
+                    .then(response => {
+                        this.message = response.data;
+                    })
+                    .catch(error => {
+                        console.error("Error encoding message:", error);
+                    });
+            }
+
+        }
     }
 }
 </script>
