@@ -15,6 +15,8 @@ public class PigLatin implements PigLatinable {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
 
+        text = text.replaceAll("^\"|\"$", "");
+
         StringBuilder encodeString = new StringBuilder();
         String[] words = text.toLowerCase().split(" ");
 
@@ -35,6 +37,8 @@ public class PigLatin implements PigLatinable {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
+
+        text = text.replaceAll("^\"|\"$", "");
 
         StringBuilder decodeString = new StringBuilder();
         String[] words = text.toLowerCase().split(" ");

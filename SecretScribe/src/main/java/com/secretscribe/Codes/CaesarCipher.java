@@ -54,6 +54,8 @@ public class CaesarCipher implements CaesarCipherable {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
 
+        text = text.replaceAll("^\"|\"$", "");
+
         StringBuilder encodedString = new StringBuilder();
         String[] words = text.toUpperCase().split(" ");
         boolean isFirstWord = true;
@@ -85,6 +87,8 @@ public class CaesarCipher implements CaesarCipherable {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
+
+        text = text.replaceAll("^\"|\"$", "");
 
         StringBuilder decodeString = new StringBuilder();
         String[] words = text.toUpperCase().split(" ");

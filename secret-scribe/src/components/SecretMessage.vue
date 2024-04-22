@@ -13,10 +13,10 @@
             <div class="control">
                 <div class="select">
                     <select v-model="codeType">
-                        <option>Select dropdown</option>
+                        <option>Select code</option>
                         <option value="caesar">Caesar Cipher</option>
                         <option value="morse">Morse Code</option>
-                        <!-- <option value="piglatin">Pig Latin</option> -->
+                        <option value="piglatin">Pig Latin</option>
                     </select>
                 </div>
             </div>
@@ -64,6 +64,14 @@ export default {
                     .catch(error => {
                         console.error("Error encoding message:", error);
                     });
+            } else if (this.codeType === 'piglatin') {
+                encodeService.encodePigLatin(this.userText)
+                    .then(response => {
+                        this.message = response.data;
+                    })
+                    .catch(error => {
+                        console.error("Error encoding message:", error);
+                    });
             }
         },
 
@@ -78,6 +86,14 @@ export default {
                     });
             } else if (this.codeType === 'morse') {
                 decodeService.decodeMorseCode(this.userText)
+                    .then(response => {
+                        this.message = response.data;
+                    })
+                    .catch(error => {
+                        console.error("Error encoding message:", error);
+                    });
+            } else if (this.codeType === 'piglatin') {
+                decodeService.decodePigLatin(this.userText)
                     .then(response => {
                         this.message = response.data;
                     })
