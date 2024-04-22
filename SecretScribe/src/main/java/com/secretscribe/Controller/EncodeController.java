@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 public class EncodeController {
-    private final CaesarCipherable caeserCipherable;
+    private final CaesarCipherable caesarCipherable;
     private final MorseCodeable morseCodeable;
     private final PigLatinable pigLatinable;
 
-    public EncodeController(CaesarCipherable caeserCipherable, MorseCodeable morseCodeable, PigLatinable pigLatinable) {
-        this.caeserCipherable = caeserCipherable;
+    public EncodeController(CaesarCipherable caesarCipherable, MorseCodeable morseCodeable, PigLatinable pigLatinable) {
+        this.caesarCipherable = caesarCipherable;
         this.morseCodeable = morseCodeable;
         this.pigLatinable = pigLatinable;
     }
 
     @PostMapping("/encode/caesarcipher")
     public String encodeCaesarCipher(@RequestBody String message) {
-        return caeserCipherable.encodeCaesarCipher(message);
+        return caesarCipherable.encodeCaesarCipher(message);
     }
 
     @PostMapping("/encode/morsecode")
@@ -33,4 +33,3 @@ public class EncodeController {
         return pigLatinable.encodePigLatin(message);
     }
 }
-
