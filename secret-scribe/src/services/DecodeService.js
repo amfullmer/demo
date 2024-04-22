@@ -3,15 +3,15 @@ import axios from 'axios';
 export default {
     
     decodeCaesarCipher(message) {
-        return axios.get(`/decode/caesarcipher`, message);
+        return axios.post(`/decode/caesarcipher`, message);
     },
 
     decodeMorseCode(message) {
-        return axios.get(`/decode/morsecode`, message);
+        return axios.post(`/decode/morsecode`, message);
     },
 
     decodePigLatin(message) {
-        return axios.get(`/decode/piglatin`, message);
+        return axios.post(`/decode/piglatin`, message);
     }
 
 }
