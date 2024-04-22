@@ -3,9 +3,7 @@ package com.secretscribe.Controller;
 import com.secretscribe.Interfaces.CaesarCipherable;
 import com.secretscribe.Interfaces.MorseCodeable;
 import com.secretscribe.Interfaces.PigLatinable;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -20,18 +18,18 @@ public class DecodeController {
         this.pigLatinable = pigLatinable;
     }
 
-    @GetMapping("/decode/caesarcipher")
-    public String decodeCaesarCipher(String message) {
+    @PostMapping("/decode/caesarcipher")
+    public String decodeCaesarCipher(@RequestBody String message) {
         return caeserCipherable.decodeCaesarCipher(message);
     }
 
-    @GetMapping("/decode/morsecode")
-    public String decodeMorseCode (String message) {
+    @PostMapping("/decode/morsecode")
+    public String decodeMorseCode(@RequestBody String message) {
         return morseCodeable.decodeMorseCode(message);
     }
 
-    @GetMapping("/decode/piglatin")
-    public String decodePigLatin(String message) {
+    @PostMapping("/decode/piglatin")
+    public String decodePigLatin(@RequestBody String message) {
         return pigLatinable.decodePigLatin(message);
     }
 }
