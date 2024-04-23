@@ -16,6 +16,7 @@ import { RouterView } from 'vue-router'
 
 <style scoped>
 .container {
+  margin-top: 15px;
   margin-bottom: 30px;
 }
 </style>
