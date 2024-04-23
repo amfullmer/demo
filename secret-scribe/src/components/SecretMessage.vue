@@ -1,19 +1,27 @@
 <template>
     <div class="container">
-        <div class="field">
-            <label class="label">Enter your message...</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="e.g. Hello world" v-model="userText"></textarea>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="field">
+                    <label class="label">Enter your message...</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="e.g. Hello world" v-model="userText"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="field">
+                    <label class="label">And receive a new message:</label>
+                    <div class="message-box">{{ message }}</div>
+                </div>
             </div>
         </div>
-        <div>
-            {{ message }}
-        </div>
         <div class="field">
+            <!-- <label class="label">Select Code</label> -->
             <div class="control">
                 <div class="select">
                     <select v-model="codeType">
-                        <option>Select code</option>
+                        <option disabled value="">Select Code</option>
                         <option value="caesar">Caesar Cipher</option>
                         <option value="morse">Morse Code</option>
                         <option value="piglatin">Pig Latin</option>
@@ -106,3 +114,15 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.message-box {
+    border: .1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem; 
+    line-height: 1.5; 
+    resize: vertical; 
+    min-height: 125px; 
+}
+</style>
