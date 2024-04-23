@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <div class="content has-text-centered flex-container"> 
-      <p class="is-size-3">Welcome to Secret Scribe</p> 
+      <p class="is-size-2">Welcome to Secret Scribe</p> 
+      <i class="fas fa-user-secret is-size-2"></i>
+      <br>
+      <p class="is-size-5">Your one stop shop for crafting clandestine commuincations.</p>
       <br>
       <router-link v-bind:to="{ name: 'secretMessage' }" class="button is-dark">Enter</router-link>
     </div>

@@ -77,74 +77,39 @@ public class MorseCode implements MorseCodeable {
         return code.trim();
     }
 
-//    @Override
-//    public String decodeMorseCode(String text) {
-//        if (text == null || text.isEmpty()) {
-//            throw new IllegalArgumentException("Input text cannot be null or empty");
-//        }
-//
-//        StringBuilder decodedString = new StringBuilder();
-//        String[] words = text.split("/");
-//        boolean isFirstWord = true;
-//
-//        for (String word : words) {
-//            String[] letters = word.trim().split(" ");
-//
-//            for (String letter : letters) {
-//
-//                for (Character key : morseCodeMap.keySet()) {
-//                    if (morseCodeMap.get(key).equals(letter)) {
-//
-//                        if (isFirstWord) {
-//                            decodedString.append(key);
-//                            isFirstWord = false;
-//                        } else {
-//                            char d = key;
-//                            d = toLowerCase(d);
-//                            decodedString.append(d);
-//                        }
-//                    }
-//                }
-//
-//            }
-//            decodedString.append(" ");
-//        }
-//        String decoded = decodedString.toString();
-//        return decoded.trim();
-//    }
-@Override
-public String decodeMorseCode(String text) {
-    if (text == null || text.isEmpty()) {
-        throw new IllegalArgumentException("Input text cannot be null or empty");
-    }
+    @Override
+    public String decodeMorseCode(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Input text cannot be null or empty");
+        }
 
-    // Remove leading and trailing double quotes, if present
-    text = text.replaceAll("^\"|\"$", "");
+        // Remove leading and trailing double quotes, if present
+        text = text.replaceAll("^\"|\"$", "");
 
-    StringBuilder decodedString = new StringBuilder();
-    String[] words = text.split("/");
-    boolean isFirstWord = true;
+        StringBuilder decodedString = new StringBuilder();
+        String[] words = text.split("/");
+        boolean isFirstWord = true;
 
-    for (String word : words) {
-        String[] letters = word.trim().split(" ");
+        for (String word : words) {
+            String[] letters = word.trim().split(" ");
 
-        for (String letter : letters) {
-            for (Character key : morseCodeMap.keySet()) {
-                if (morseCodeMap.get(key).equals(letter)) {
-                    char decodedChar = Character.toLowerCase(key); // Convert to lowercase
-                    if (isFirstWord) {
-                        decodedChar = Character.toUpperCase(decodedChar); // Capitalize first letter of the first word
-                        isFirstWord = false;
+            for (String letter : letters) {
+                for (Character key : morseCodeMap.keySet()) {
+                    if (morseCodeMap.get(key).equals(letter)) {
+                        char decodedChar = Character.toLowerCase(key); // Convert to lowercase
+                        if (isFirstWord) {
+                            decodedChar = Character.toUpperCase(decodedChar); // Capitalize first letter of the first word
+                            isFirstWord = false;
+                        }
+                        decodedString.append(decodedChar);
                     }
-                    decodedString.append(decodedChar);
                 }
             }
+            decodedString.append(" ");
         }
-        decodedString.append(" ");
+        String decoded = decodedString.toString().trim();
+        return decoded;
     }
-    String decoded = decodedString.toString().trim();
-    return decoded;
-}
 
 
 }

@@ -7,6 +7,8 @@ import { RouterView } from 'vue-router'
     <router-link v-bind:to="{ name: 'home' }">Home</router-link>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <router-link v-bind:to="{ name: 'about' }">About</router-link>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <router-link v-bind:to="{ name: 'secretMessage' }">Encode Messages</router-link>
   </nav>
 
   <RouterView />
