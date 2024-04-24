@@ -1,13 +1,18 @@
 package com.secretscribe.Codes;
 
+import com.secretscribe.Interfaces.CaesarCipherable;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
-public class CaesarCipher {
+@Component
+public class CaesarCipher implements CaesarCipherable {
     /*
     All hail
      */
+
     private static final HashMap<Character, Character> caesarCipherMap = new HashMap<>();
 
     static {
@@ -44,10 +49,12 @@ public class CaesarCipher {
         caesarCipherMap.put(',', ',');
     }
 
-    public static String encodeCaesarCipher(String text) {
+    public String encodeCaesarCipher(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
+
+        text = text.replaceAll("^\"|\"$", "");
 
         StringBuilder encodedString = new StringBuilder();
         String[] words = text.toUpperCase().split(" ");
@@ -76,10 +83,12 @@ public class CaesarCipher {
         return encodedText.trim();
     }
 
-    public static String decodeCaesarCipher(String text) {
+    public String decodeCaesarCipher(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
+
+        text = text.replaceAll("^\"|\"$", "");
 
         StringBuilder decodeString = new StringBuilder();
         String[] words = text.toUpperCase().split(" ");

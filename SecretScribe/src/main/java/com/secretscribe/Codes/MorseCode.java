@@ -1,10 +1,14 @@
 package com.secretscribe.Codes;
 
+import com.secretscribe.Interfaces.MorseCodeable;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
 import static java.lang.Character.toLowerCase;
 
-public class MorseCode {
+@Component
+public class MorseCode implements MorseCodeable {
     /*
     The saddest of the codes... get it?
      */
@@ -56,7 +60,8 @@ public class MorseCode {
         morseCodeMap.put(',', ",");
     }
 
-    public static String encodeMorseCode(String text) {
+    @Override
+    public String encodeMorseCode(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
@@ -72,10 +77,14 @@ public class MorseCode {
         return code.trim();
     }
 
-    public static String decodeMorseCode(String text) {
+    @Override
+    public String decodeMorseCode(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
+
+        // Remove leading and trailing double quotes, if present
+        text = text.replaceAll("^\"|\"$", "");
 
         StringBuilder decodedString = new StringBuilder();
         String[] words = text.split("/");
@@ -85,26 +94,22 @@ public class MorseCode {
             String[] letters = word.trim().split(" ");
 
             for (String letter : letters) {
-
                 for (Character key : morseCodeMap.keySet()) {
                     if (morseCodeMap.get(key).equals(letter)) {
-
+                        char decodedChar = Character.toLowerCase(key); // Convert to lowercase
                         if (isFirstWord) {
-                            decodedString.append(key);
+                            decodedChar = Character.toUpperCase(decodedChar); // Capitalize first letter of the first word
                             isFirstWord = false;
-                        } else {
-                            char d = key;
-                            d = toLowerCase(d);
-                            decodedString.append(d);
                         }
+                        decodedString.append(decodedChar);
                     }
                 }
-
             }
             decodedString.append(" ");
         }
-        String decoded = decodedString.toString();
-        return decoded.trim();
+        String decoded = decodedString.toString().trim();
+        return decoded;
     }
+
 
 }
