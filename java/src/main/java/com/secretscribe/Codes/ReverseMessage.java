@@ -2,7 +2,7 @@ package com.secretscribe.Codes;
 
 public class ReverseMessage {
     /*
-
+    Flip it and reverse it...
      */
 
     public String reverseMessage(String text) {
@@ -16,7 +16,7 @@ public class ReverseMessage {
 
         while (i > 0) {
             reversedMessage.append(text.charAt(i-1));
-            i++;
+            i--;
         }
 
         return reversedMessage.toString();
