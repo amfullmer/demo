@@ -1,6 +1,6 @@
 # Secret Scribe
 
-Secret Scribe is a Java based web app inspired by kid's spy games. It allows users to encode messages into Morse Code, Pig Latin, Caesar Cipher, or a Reverse Alphabet Cipher with decoding functionalities. Send messages back and forth and keep the grown ups in the dark. 
+Secret Scribe is a Java based web app inspired by kids' spy games. It allows users to encode messages into Morse Code, Pig Latin, Caesar Cipher, or a Reverse Alphabet Cipher with decoding functionalities. Send messages back and forth and keep the grown ups in the dark. 
 
 ## Features
 
