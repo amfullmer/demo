@@ -33,6 +33,12 @@
       and meaning hidden.
       Talk fast or someone might be able to crack your code.
     </p>
+
+    <h4>Z, y, x...</h4>
+    <p>
+      Can you recite the alphabet backwards? Also called the retrograde alphabet. Well now you don't have to.
+      Our handy encoder will do it for you. It's still a cool party trick though.
+    </p>
     <br>
     <p>
       Go forth! Have fun! And use the power of Secret Scribe wisely.
