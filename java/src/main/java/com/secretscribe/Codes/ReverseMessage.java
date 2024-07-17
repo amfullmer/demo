@@ -1,10 +1,15 @@
 package com.secretscribe.Codes;
 
-public class ReverseMessage {
+import com.secretscribe.Interfaces.Reversable;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ReverseMessage implements Reversable {
     /*
     Flip it and reverse it...
      */
 
+    @Override
     public String reverseMessage(String text) {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Input text cannot be null or empty");
