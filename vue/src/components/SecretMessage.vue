@@ -25,6 +25,7 @@
                         <option value="caesar">Caesar Cipher</option>
                         <option value="morse">Morse Code</option>
                         <option value="piglatin">Pig Latin</option>
+                        <option value="reversemessage">Reverse message</option>
                     </select>
                 </div>
             </div>
@@ -80,6 +81,11 @@ export default {
                     .catch(error => {
                         console.error("Error encoding message:", error);
                     });
+            } else if (this.codeType === 'reversemessage') {
+                decodeService.reverseMessage(this.userText)
+                .then(response => {
+                    this.message = response.data;
+                })
             }
         },
 
@@ -108,6 +114,11 @@ export default {
                     .catch(error => {
                         console.error("Error encoding message:", error);
                     });
+            } else if (this.codeType === 'reversemessage') {
+                decodeService.reverseMessage(this.userText)
+                .then(response => {
+                    this.message = response.data;
+                })
             }
 
         }

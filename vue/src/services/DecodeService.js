@@ -23,5 +23,13 @@ export default {
                 'Content-Type': 'application/json'
             }
         });
+    },
+
+    reverseMessage(message) {
+        return axios.post(`/reversemessage`, message, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
     }
 }
